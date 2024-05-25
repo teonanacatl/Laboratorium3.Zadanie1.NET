@@ -3,10 +3,66 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Laboratorium3.Zadanie1.NET"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-        <Grid>
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-        </Grid>
+        <ComboBox x:Name="algorithmComboBox" Grid.Row="1" Grid.Column="0" Width="120"
+                  SelectionChanged="OnAlgorithmSelectionChanged" VerticalAlignment="Center" Margin="10, 0, 0, 0" />
+        <Button x:Name="generateKeyAndIVButton" Grid.Row="3" Grid.Column="0" Content="Generate Key and IV" Width="120"
+                Click="OnGenerateKeyAndIVButtonClick" VerticalAlignment="Center" Margin="10, 0, 0, 0" />
+        <Button x:Name="encryptButton" Grid.Row="5" Grid.Column="0" Content="Encrypt" Width="120"
+                Click="OnEncryptButtonClick" VerticalAlignment="Center" Margin="10, 0, 0, 0" />
+        <Button x:Name="decryptButton" Grid.Row="8" Grid.Column="0" Content="Decrypt" Width="120"
+                Click="OnDecryptButtonClick" VerticalAlignment="Center" Margin="10, 0, 0, 0" />
+        <Button x:Name="getEncryptTimeButton" Grid.Row="11" Grid.Column="0" Content="Get Encrypt Time" Width="120"
+                Click="OnGetEncryptTimeButtonClick" VerticalAlignment="Center" Margin="10, 0, 0, 0" />
+        <Button x:Name="getDecryptTimeButton" Grid.Row="12" Grid.Column="0" Content="Get Decrypt Time" Width="120"
+                Click="OnGetDecryptTimeButtonClick" VerticalAlignment="Center" Margin="10, 0, 0, 0" />
+
+        <Label Grid.Row="0" Grid.Column="2" Content="Key" VerticalAlignment="Center" />
+        <TextBox x:Name="keyTextBox" Grid.Row="1" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+        <Label Grid.Row="2" Grid.Column="2" Content="IV" VerticalAlignment="Center" />
+        <TextBox x:Name="ivTextBox" Grid.Row="3" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+
+        <Label Grid.Row="4" Grid.Column="2" Content="PlainText" VerticalAlignment="Center" />
+        <Label Grid.Row="5" Grid.Column="1" Content="ASCII" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox x:Name="plaintextTextBox" Grid.Row="5" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+        <Label Grid.Row="6" Grid.Column="1" Content="HEX" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox x:Name="plaintextHexTextBox" Grid.Row="6" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+
+        <Label Grid.Row="7" Grid.Column="2" Content="CipherText" VerticalAlignment="Center" />
+        <Label Grid.Row="8" Grid.Column="1" Content="ASCII" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox x:Name="ciphertextTextBox" Grid.Row="8" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+        <Label Grid.Row="9" Grid.Column="1" Content="HEX" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        <TextBox x:Name="ciphertextHexTextBox" Grid.Row="9" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+
+        <Label Grid.Row="11" Grid.Column="1" Content="Time/message at encryption:" VerticalAlignment="Center"
+               HorizontalAlignment="Right" />
+        <TextBox x:Name="encryptTimeTextBox" Grid.Row="11" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+        <Label Grid.Row="12" Grid.Column="1" Content="Time/message at decryption:" VerticalAlignment="Center"
+               HorizontalAlignment="Right" />
+        <TextBox x:Name="decryptTimeTextBox" Grid.Row="12" Grid.Column="2" Width="120" VerticalAlignment="Center" />
+    </Grid>
 </Window>
